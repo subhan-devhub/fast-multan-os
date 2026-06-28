@@ -1,0 +1,71 @@
+╔════════════════════════════════════════════════════════════════════╗
+║                   🧪 MOCK UI TESTING INSTRUCTIONS                  ║
+╚════════════════════════════════════════════════════════════════════╝
+
+⚠️  YOU'RE SEEING FIREBASE ERRORS BECAUSE YOU'RE ON THE WRONG PAGE!
+
+The error "Firebase: Error (auth/api-key-not-valid)" means you're trying
+to use the REAL authentication pages which require Firebase setup.
+
+✅ TO TEST THE UI WITHOUT FIREBASE:
+
+┌────────────────────────────────────────────────────────────────────┐
+│  STEP 1: Open Your Browser                                         │
+└────────────────────────────────────────────────────────────────────┘
+
+Go to:  http://localhost:5174/test
+
+This will show you a nice landing page with buttons to access the mock
+pages.
+
+┌────────────────────────────────────────────────────────────────────┐
+│  STEP 2: Click on "Sign In Mock" or "Sign Up Mock"                │
+└────────────────────────────────────────────────────────────────────┘
+
+OR directly type these URLs:
+
+   Sign In Mock:  http://localhost:5174/signin-mock
+   Sign Up Mock:  http://localhost:5174/signup-mock
+
+┌────────────────────────────────────────────────────────────────────┐
+│  STEP 3: Use Test Credentials                                      │
+└────────────────────────────────────────────────────────────────────┘
+
+Email:    test@student.nu.edu.pk
+Password: password123
+
+Or any email ending with @student.nu.edu.pk or @nu.edu.pk
+
+┌────────────────────────────────────────────────────────────────────┐
+│  WHAT YOU'LL SEE                                                    │
+└────────────────────────────────────────────────────────────────────┘
+
+✓ Yellow banner saying "🧪 Mock Mode - Test UI without Firebase"
+✓ Blue box with test credentials/instructions
+✓ Fully functional form with validation
+✓ Loading states when submitting
+✓ Redirects to dashboard on success
+
+═══════════════════════════════════════════════════════════════════════
+
+📌 QUICK REFERENCE:
+
+Pages That NEED Firebase (DON'T USE for UI testing):
+  ❌  http://localhost:5174/          (Real Sign In)
+  ❌  http://localhost:5174/signup    (Real Sign Up)
+
+Pages for UI Testing (NO Firebase needed):
+  ✅  http://localhost:5174/test          (Test Landing - START HERE)
+  ✅  http://localhost:5174/signin-mock   (Mock Sign In)
+  ✅  http://localhost:5174/signup-mock   (Mock Sign Up)
+
+═══════════════════════════════════════════════════════════════════════
+
+🎯 YOUR NEXT ACTION:
+
+1. Copy this URL: http://localhost:5174/test
+2. Paste it in your browser
+3. Click the green "Sign In Mock" button
+4. Test the UI!
+
+═══════════════════════════════════════════════════════════════════════

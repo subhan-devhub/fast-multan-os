@@ -1,0 +1,222 @@
+╔════════════════════════════════════════════════════════════════════════════╗
+║                  MULTIPLE MOCK SESSIONS - COMPLETE FLOW                    ║
+╚════════════════════════════════════════════════════════════════════════════╝
+
+
+                           START HERE
+                               │
+                               ▼
+                  ┌─────────────────────────┐
+                  │   Test Landing Page     │
+                  │  /test                  │
+                  │                         │
+                  │  [Sign In Mock]         │
+                  │  [Sign Up Mock]         │
+                  │  [👥 Manage Users] ◄──  Click here for User Manager!
+                  └─────────────────────────┘
+                               │
+                ┌──────────────┼──────────────┐
+                ▼              ▼              ▼
+        ┌─────────────┐  ┌──────────────┐  ┌──────────────────┐
+        │  Sign Up    │  │   Sign In    │  │  User Manager    │
+        │  /signup    │  │   /signin    │  │  /mock-users ✨  │
+        │  -mock      │  │   -mock      │  │                  │
+        └─────────────┘  └──────────────┘  └──────────────────┘
+                │              │                     │
+                └──────────────┼─────────────────────┘
+                               ▼
+                  ┌─────────────────────────┐
+                  │    USER MANAGER ✨       │
+                  │                         │
+                  │  Current User:          │
+                  │  student1@...  [Go]     │
+                  │                         │
+                  │  [➕ Create Test Users] │
+                  │  [✨ Sign Up New]       │
+                  │  [🗑️ Clear All]         │
+                  │                         │
+                  │  All Mock Users (3):    │
+                  │  ┌──────────────────┐  │
+                  │  │ student1@...     │  │
+                  │  │ [Switch] [Delete]│  │
+                  │  └──────────────────┘  │
+                  │  ┌──────────────────┐  │
+                  │  │ student2@...     │  │
+                  │  │ [Switch] [Delete]│  │
+                  │  └──────────────────┘  │
+                  │  ┌──────────────────┐  │
+                  │  │ teacher@...      │  │
+                  │  │ [Switch] [Delete]│  │
+                  │  └──────────────────┘  │
+                  └─────────────────────────┘
+                               │
+                   Click [Switch] on any user
+                               │
+                               ▼
+                  ┌─────────────────────────┐
+                  │     DASHBOARD           │
+                  │  /dashboard-mock        │
+                  │                         │
+                  │  [MOCK] Badge           │
+                  │  Logged in as: [email]  │
+                  │                         │
+                  │  Stats: 📅📚🎓👨‍🏫      │
+                  │                         │
+                  │  [Logout] ─────────────┐│
+                  └─────────────────────────┘│
+                               │             │
+                               ▼             │
+                       ┌──────────────┐      │
+                       │   SIDEBAR    │      │
+                       │              │      │
+                       │  🏠 Dashboard│      │
+                       │  📅 Events   │      │
+                       │  📚 Groups   │      │
+                       │  🎓 Alumni   │      │
+                       │  👨‍🏫 Faculty │      │
+                       │  📝 Complaint│      │
+                       │  🗺️ Map      │      │
+                       └──────────────┘      │
+                               │             │
+                               ▼             │
+                  ┌─────────────────────────┐│
+                  │    ALL PAGES WORK!      ││
+                  │                         ││
+                  │  • Events               ││
+                  │  • Study Groups         ││
+                  │  • Alumni Network       ││
+                  │  • Faculty Directory    ││
+                  │  • Submit Complaint     ││
+                  │  • Campus Map           ││
+                  └─────────────────────────┘│
+                                             │
+                         Logout redirects ───┘
+                                 │
+                                 ▼
+                  ┌─────────────────────────┐
+                  │   Sign In Page          │
+                  │   /signin-mock          │
+                  └─────────────────────────┘
+
+
+═══════════════════════════════════════════════════════════════════════════
+
+                        🔑 KEY WORKFLOWS
+
+═══════════════════════════════════════════════════════════════════════════
+
+WORKFLOW A: Quick Test Users (Fastest!)
+───────────────────────────────────────
+
+1. /test → Click "Manage Mock Users"
+2. Click "➕ Create Test Users" button
+3. Instantly get 3 users:
+   • student1@student.nu.edu.pk
+   • student2@student.nu.edu.pk
+   • teacher@nu.edu.pk
+4. Click [Switch] on any user
+5. Dashboard loads automatically
+6. Navigate all pages with sidebar
+7. Go back to /mock-users to switch users
+
+
+WORKFLOW B: Custom User Creation
+─────────────────────────────────
+
+1. /test → Click "Sign Up Mock"
+2. Enter custom email (e.g., john@student.nu.edu.pk)
+3. Enter password (6+ chars)
+4. Submit → Auto login
+5. Dashboard loads
+6. /mock-users → See new user in list
+7. Switch between all users
+
+
+WORKFLOW C: Multi-User Testing
+───────────────────────────────
+
+1. Create test users
+2. Switch to Student 1
+3. Navigate to Study Groups → Join group
+4. /mock-users → Switch to Student 2
+5. Navigate to Study Groups → Join same group
+6. /mock-users → Switch to Teacher
+7. Navigate to Faculty → View directory
+8. Compare experiences across users
+
+
+WORKFLOW D: Session Management
+───────────────────────────────
+
+1. Sign in as User 1
+2. Navigate to Events
+3. Close browser tab
+4. Reopen → Go to /dashboard-mock
+5. Still logged in! ✓
+6. /mock-users → Switch to User 2
+7. Refresh page
+8. Still logged in as User 2! ✓
+
+
+═══════════════════════════════════════════════════════════════════════════
+
+                     📊 DATA FLOW DIAGRAM
+
+═══════════════════════════════════════════════════════════════════════════
+
+    ┌─────────────────────────────────────────────────────────┐
+    │                    localStorage                         │
+    │                                                          │
+    │  mockUser: { email, uid, displayName, ... }  ◄─────────┐│
+    │  (Current active user)                                  ││
+    │                                                          ││
+    │  allMockUsers: [                              ◄─────────┤│
+    │    { email: "student1@...", password: "..." },          ││
+    │    { email: "student2@...", password: "..." },          ││
+    │    { email: "teacher@...", password: "..." }            ││
+    │  ]                                                       ││
+    │  (All registered users)                                 ││
+    └─────────────────────────────────────────────────────────┘│
+                                                                │
+                    ▲                                           │
+                    │ Read/Write                                │
+                    ▼                                           │
+    ┌─────────────────────────────────────────────────────────┐│
+    │              MockAuthContext                            ││
+    │                                                          ││
+    │  • signup(email, password)                              ││
+    │    → Create new user                                    ││
+    │    → Add to allMockUsers ─────────────────────────────────┘
+    │    → Set as mockUser ────────────────────────────────────┐
+    │                                                          │
+    │  • login(email, password)                               │
+    │    → Find in allMockUsers                               │
+    │    → Verify password                                    │
+    │    → Set as mockUser ────────────────────────────────────┤
+    │                                                          │
+    │  • logout()                                             │
+    │    → Remove mockUser ────────────────────────────────────┤
+    │                                                          │
+    │  • currentUser (state)                                  │
+    │    → Used by all components ─────────────────────────────┤
+    └─────────────────────────────────────────────────────────┘│
+                                                                │
+                    ▲                                           │
+                    │ Uses                                      │
+                    ▼                                           │
+    ┌─────────────────────────────────────────────────────────┐│
+    │              Components                                 ││
+    │                                                          ││
+    │  • SignInMock    → Calls login()                        ││
+    │  • SignUpMock    → Calls signup()                       ││
+    │  • NavbarMock    → Shows currentUser, calls logout()    ││
+    │  • UserManager   → Switch users, view all ──────────────┘
+    │  • Protected Routes → Check currentUser
+    └─────────────────────────────────────────────────────────┘
+
+
+═══════════════════════════════════════════════════════════════════════════
+
+Ready? Start here: http://localhost:5173/mock-users
+
+═══════════════════════════════════════════════════════════════════════════
