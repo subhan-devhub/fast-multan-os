@@ -114,7 +114,7 @@ const Footer = () => {
               e.target.style.borderBottomColor = 'rgba(255,255,255,0.4)';
             }}
           >
-            Malik Subhan
+            Subhan
           </a>
           {' '}— BSCS Pioneer Batch &middot; FAST University Multan &middot; 2025
         </p>
